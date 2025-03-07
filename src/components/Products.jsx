@@ -12,7 +12,7 @@ import {
 } from "@radix-ui/themes";
 import { toast } from 'react-toastify';
 import FilterBox from "./FilterBox";
-import productStore from "../store/productsStore";
+import productStore from "../store/productStore";
 import cartStore from "../store/cartStore";
 import categoryStore from "../store/categoryStore";
 import cartToggle from "../store/cartToggle";
@@ -23,7 +23,7 @@ function Products({ rangeRadio, selectedValues }) {
   const { cartStatus,cartStatusToggle } = cartToggle();
    const [cartItems, setCartItems] = useState([]);
   const {categories, fetchCategories} = categoryStore();
-  const { products, fetchProducts } = productStore();
+  const { products, fetchProducts,setLoader,loader} = productStore();
   const [searchValue, setSearchValue] = useState("");
   const [category, setCategory] = useState("all");
   const [loading, setLoading] = useState(false);
@@ -53,10 +53,13 @@ function Products({ rangeRadio, selectedValues }) {
 
 useEffect(() => {
   const fetchData = async () => {
-    setLoading(false);
+    // console.log("before:",loader);
     await fetchProducts();
     await fetchCategories();
-    setLoading(true);
+    setLoader(false);
+    
+    // console.log("after:",loader);
+    
   };
 
   fetchData();
@@ -196,15 +199,14 @@ useEffect(() => {
                 </Card>
               );
             })}
-          </Grid >
+          </Grid>
         </div>
       );
     })
     .filter(Boolean)} {/* Remove null values from array */}
 </div>
 
-
-      {loading && <Spinner loading={loading} size="3" style={{left:"50%",top:"50%",position:"fixed"}} />}
+      
       <div className='flex md:hidden fixed bottom-0 z-8 w-full justify-between items-center' style={{background:"#000",width:"100%",padding:"10px",borderTop:"1px solid #ccc"}}>
               <Button onClick={()=>cartStatusToggle()}> View Cart</Button>
               <Text as="p" className="real price" size="1">you saved ₹{totalPriceDiscount}/-</Text>

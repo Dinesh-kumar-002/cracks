@@ -157,6 +157,7 @@ function SignUp() {
           signUpStatusToggle();
           cartStatusToggle();
       }
+
      })
      .catch(error=>{
        console.error(error);
@@ -169,7 +170,7 @@ function SignUp() {
 
   return (
     <div
-      className="p-5 fixed top-16 right-0 h-full bg-black w-100 z-9"
+      className="p-5 fixed top-16 right-0 h-full bg-black z-9"
       style={{ display: signUpStatus ? "block" : "none" }}
     >
       <div className="flex justify-between mb-2">

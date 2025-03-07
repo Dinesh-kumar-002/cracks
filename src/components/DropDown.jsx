@@ -23,7 +23,7 @@ const DropDown = () => {
 		<DropdownMenu.Root>
 			<DropdownMenu.Trigger asChild>
 				<button
-					className="inline-flex size-[35px] items-center justify-center rounded-full text-violet11 outline-none"
+					className="inline-flex size-[35px] items-center justify-center text-violet11 outline-none"
 					aria-label="Customise options"
 				>
 					<AvatarDemo/>
@@ -32,20 +32,20 @@ const DropDown = () => {
 
 			<DropdownMenu.Portal>
 				<DropdownMenu.Content
-					className="min-w-[100px] rounded-md bg-black dark:bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
+					className="min-w-[100px] bg-black dark:bg-white p-[5px] shadow-[0px_10px_38px_-10px_rgba(22,_23,_24,_0.35),_0px_10px_20px_-15px_rgba(22,_23,_24,_0.2)] will-change-[opacity,transform] data-[side=bottom]:animate-slideUpAndFade data-[side=left]:animate-slideRightAndFade data-[side=right]:animate-slideLeftAndFade data-[side=top]:animate-slideDownAndFade"
 					sideOffset={5}
 				>
-					<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+					<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={() => {(loginStatus)? (!profileStatus && toggleProfileStatus()): loginOffcanvasStatusToggle()}}>
 						View Profile
 						
 					</DropdownMenu.Item>
-					<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
+					<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1">
 						My Orders
 						
 					</DropdownMenu.Item>
 					
 					<DropdownMenu.Sub>
-						<DropdownMenu.SubTrigger className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:data-[state=open]:bg-violet9 data-[state=open]:bg-violet4 data-[disabled]:text-mauve8 data-[highlighted]:data-[state=open]:text-violet1 data-[highlighted]:text-violet1 data-[state=open]:text-violet11">
+						<DropdownMenu.SubTrigger className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[highlighted]:data-[state=open]:bg-violet9 data-[state=open]:bg-violet4 data-[disabled]:text-mauve8 data-[highlighted]:data-[state=open]:text-violet1 data-[highlighted]:text-violet1 data-[state=open]:text-violet11">
 							Change Theme
 							<div className="ml-auto pl-5 text-mauve11 group-data-[disabled]:text-mauve8 group-data-[highlighted]:text-white">
 								<ChevronRightIcon />
@@ -57,10 +57,10 @@ const DropDown = () => {
 								sideOffset={2}
 								alignOffset={-5}
 							>
-								<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>setTheme('dark')}>
+								<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>setTheme('dark')}>
 									Dark
 								</DropdownMenu.Item>
-								<DropdownMenu.Item className="relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>setTheme('light')}>
+								<DropdownMenu.Item className="relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>setTheme('light')}>
 									Light
 								</DropdownMenu.Item>
 							</DropdownMenu.SubContent>
@@ -69,10 +69,10 @@ const DropDown = () => {
 
 					<DropdownMenu.Separator className="m-[5px] h-px bg-gray-500" />
                     
-                    {loginStatus?<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>{(loginStatus)?logout():null}}>
+                    {loginStatus?<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>{(loginStatus)?logout():null}}>
 						Logout
 						
-					</DropdownMenu.Item>:<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center rounded-[3px] pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>{!(loginOffcanvasStatus)?loginOffcanvasStatusToggle():null;(cartStatus)?cartStatusToggle():null}}>
+					</DropdownMenu.Item>:<DropdownMenu.Item className="group relative flex h-[35px] select-none items-center  pl-[25px] pr-[5px] text-[15px] leading-none text-violet11 outline-none data-[disabled]:pointer-events-none data-[highlighted]:bg-violet9 data-[disabled]:text-mauve8 data-[highlighted]:text-violet1" onClick={()=>{!(loginOffcanvasStatus)?loginOffcanvasStatusToggle():null;(cartStatus)?cartStatusToggle():null}}>
 						Login
 						
 					</DropdownMenu.Item>}

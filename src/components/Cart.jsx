@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";import axios from "axios";
 import cartStore from "../store/cartStore";
-import productStore from "../store/productsStore";
+import productStore from "../store/productStore";
 import categoryStore from "../store/categoryStore";
 import { MdClose } from "react-icons/md";
 import { Grid, Card, Box, Flex, TextField ,Spinner,Button, Text } from "@radix-ui/themes";
@@ -52,7 +52,7 @@ function Cart() {
       await axios.post('https://myhitech.digitalmantraaz.com/api/place-order',{cart,email:loginUserEmail})
       .then(response =>{
         console.log(response.data);
-        
+
         
         // if()
         // clearCart();

@@ -7,7 +7,7 @@ function Profile() {
   return (
     <div>
       <div
-        className="p-5 fixed top-16 right-0 h-full bg-black w-100 z-9"
+        className="p-5 fixed top-16 right-0 h-full bg-black z-9"
         style={{ display: profileStatus ? "block" : "none" }}
       >
       

@@ -4,7 +4,9 @@ import filterToggle from "./store/filterToggle";
 import SignUp from "./components/SignUp";
 import Login from "./components/Login";
 import theme from "./store/theme";
-
+import {
+  Spinner
+} from "@radix-ui/themes";
 import "@radix-ui/themes/styles.css";
 import Profile from "./components/Profile";
 import {
@@ -19,9 +21,10 @@ import Products from "./components/Products";
 import Navbar from "./components/Navbar";
 import Cart from "./components/Cart";
 import "./App.css";
+import productStore from "./store/productStore";
 
 function App() {
-
+  const {loader,setLoader} = productStore();
   const { status,updateStatus } = filterToggle();
   const { themeStatus } = theme();
   const [selectedValues, setSelectedValues] = useState([]);
@@ -122,6 +125,17 @@ function App() {
         <Profile/>
         <Login/>
         </div>
+        <div style={{position:"fixed",left:"0", top:"0", width:"100%",height:"100%",display:loader?"flex":"none",justifyContent:"center",alignItems:"center",zIndex:"999",background:"#1c2f3696",flexDirection:"column"}}>
+            {loader && 
+            <>
+            <Spinner loading={loader} size="3" style={{}} />
+            <p className="text-center">
+              Please Wait ...
+            </p>
+            </>
+            }
+            
+      </div>
         
       </Theme>
     </>
