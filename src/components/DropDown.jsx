@@ -4,7 +4,7 @@ import {
 	ChevronRightIcon,
 } from "@radix-ui/react-icons";
 import AvatarDemo from './AvatarDemo';
-import profileToggle from "../store/ProfileToggle";
+import profileToggle from "../store/profileToggle";
 import userLoginStatus from "../store/userLoginStatus";
 import loginOffcanvas from "../store/loginOffcanvas";
 import cartToggle from "../store/cartToggle";
