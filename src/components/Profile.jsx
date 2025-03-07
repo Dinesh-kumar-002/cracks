@@ -7,7 +7,7 @@ function Profile() {
   return (
     <div>
       <div
-        className="p-5 fixed top-16 right-0 h-full bg-black z-9"
+        className="p-5 fixed top-16 right-0 h-full w-100 bg-black z-9"
         style={{ display: profileStatus ? "block" : "none" }}
       >
       
@@ -15,7 +15,7 @@ function Profile() {
         <button onClick={toggleProfileStatus}>
           <GrLinkPrevious />
         </button>
-        <h1 className="text-[20px] mb-5">Login</h1>
+        <h1 className="text-[20px] mb-5">Profile</h1>
       </div>
 
       </div>
